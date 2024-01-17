@@ -2,7 +2,7 @@ const title = document.querySelector("h1");
 const btnGreet = document.querySelector("button");
 
 title.addEventListener("click", () => {
-  title.textContent = "Hello Everyone";
+  title.textContent = "Hello All";
 });
 
 function greet(name) {
