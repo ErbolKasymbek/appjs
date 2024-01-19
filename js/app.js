@@ -12,44 +12,37 @@ const btnAge = document.querySelector("[data-age-btn]");
 const btnId = document.querySelector("[data-id-btn]");
 const btnReset = document.querySelector("[data-reset-btn]");
 
-btnId.addEventListener("click", () => {
-  function getId(idlist) {
-    for (let i = 0; i < idlist.length; i++) {
-      if (tableHead[i]) {
-        tableCellId[i].textContent = idlist[i];
-      }
-    }
-  }
-  getId(userIds);
+const btnsGroup = [btnId, btnName, btnAge, btnReset];
+
+btnsGroup.forEach((btn) => {
+  btn.addEventListener("click", checker);
 });
 
-btnName.addEventListener("click", () => {
-  function getNames(namelist) {
-    for (let i = 0; i < namelist.length; i++) {
-      if (tableHead[i]) {
-        tableCellName[i].textContent = namelist[i];
-      }
+function checker(e) {
+  if (e.target.hasAttribute("data-id-btn")) {
+    for (let i = 0; i < userIds.length; i++) {
+      tableCellId[i].textContent = userIds[i];
+      if (tableCellId.length === i + 1) return;
     }
   }
-  getNames(userNames);
-});
-
-btnAge.addEventListener("click", () => {
-  function getAges(agelist) {
-    for (let i = 0; i < agelist.length; i++) {
-      if (tableHead[i]) {
-        tableCellAge[i].textContent = agelist[i];
-      }
+  if (e.target.hasAttribute("data-name-btn")) {
+    for (let i = 0; i < userNames.length; i++) {
+      tableCellName[i].textContent = userNames[i];
+      if (tableCellName.length === i + 1) return;
     }
   }
-  getAges(userAges);
-});
-
-btnReset.addEventListener("click", () => {
-  const tableCellGroup = [tableCellId, tableCellName, tableCellAge];
-  tableCellGroup.forEach((tablecell) => {
-    tablecell.forEach((cell) => {
-      cell.textContent = "";
-    });
-  });
-});
+  if (e.target.hasAttribute("data-age-btn")) {
+    for (let i = 0; i < userAges.length; i++) {
+      tableCellAge[i].textContent = userAges[i];
+      if (tableCellAge.length === i + 1) return;
+    }
+  }
+  if (e.target.hasAttribute("data-reset-btn")) {
+    const tableCellGroup = [tableCellId, tableCellName, tableCellAge];
+    for (let i = 0; i < tableCellGroup.length; i++) {
+      tableCellGroup[i].forEach((tablecell) => {
+        tablecell.textContent = "";
+      });
+    }
+  }
+}
