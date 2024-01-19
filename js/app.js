@@ -1,5 +1,5 @@
 const userNames = ["Aron", "Blake", "Taker", "R.Sean", "Born"];
-const userAges = [20, 24, 30];
+const userAges = [20, 24, 30, 19, 31, 22];
 const userIds = [34, 79, 114];
 
 const tableRow = document.querySelectorAll(".trow");
