@@ -1,4 +1,4 @@
-const userNames = ["Aron", "Blake", "Taker"];
+const userNames = ["Aron", "Blake", "Taker", "R.Sean", "Born"];
 const userAges = [20, 24, 30];
 const userIds = [34, 79, 114];
 
