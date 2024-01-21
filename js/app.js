@@ -14,9 +14,7 @@ const btnReset = document.querySelector("[data-reset-btn]");
 
 const btnsGroup = [btnId, btnName, btnAge, btnReset];
 
-btnsGroup.forEach((btn) => {
-  btn.addEventListener("click", checker);
-});
+btnsGroup.forEach((btn) => btn.addEventListener("click", checker));
 
 function checker(e) {
   if (e.target.hasAttribute("data-id-btn")) {
